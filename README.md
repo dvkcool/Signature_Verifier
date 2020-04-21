@@ -11,11 +11,11 @@ An application for Android showing some of the front-end interface is as follows
 
 1. Welcome Screen
 _____________________
- ![Welcome_Screen](https://github.com/dvkcool/Signature_Verifier/blob/master/res/Front_page_2.png?raw=true)
+ ![Welcome_Screen](https://github.com/dvkcool/Signature_Verifier/blob/master/screenshots/Front_page_2.png?raw=true)
  _____________________
  2. About us:
 ______________________
- ![About us](https://github.com/dvkcool/Signature_Verifier/blob/master/res/aboutus.png?raw=true)
+ ![About us](https://github.com/dvkcool/Signature_Verifier/blob/master/screenshots/aboutus.png?raw=true)
 ___________________
 3. Testing:
 ______________________
