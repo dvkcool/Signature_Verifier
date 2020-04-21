@@ -19,11 +19,11 @@ ______________________
 ___________________
 3. Testing:
 ______________________
-![testing]()
+![testing](https://raw.githubusercontent.com/dvkcool/Signature_Verifier/master/screenshots/test.png)
 ___________________
 4. Training:
 ______________________
-![training]()
+![training](https://github.com/dvkcool/Signature_Verifier/blob/master/screenshots/train.png)
 ___________________
 
 
@@ -46,6 +46,7 @@ as follows :-
 + 2nd layer = 500 nodes
 + 3rd layer = 500 nodes
 + 4th layer = 2 nodes
+![Backpropagation](https://github.com/dvkcool/Signature_Verifier/blob/master/screenshots/ModelRunningFor50Epochs.png)
 
 ## Requirements
 + Python 3.6
