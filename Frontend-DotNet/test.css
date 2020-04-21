@@ -1,0 +1,45 @@
+.btn{
+	display:block;
+	background-color: #4CAF50; /* Green */
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 10px;
+}
+
+.imag{
+	margin:10px;
+	border: 2px red solid;
+}
+
+.btn1{
+	display:block;
+	background-color: #4CAF50; /* Green */
+	border: none;
+	color: white;
+	padding: 5px 15px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 10px;
+	margin: 10px;
+	float: left;	
+}
+
+.btn2{
+	display:block;
+	background-color: red; /* Green */
+	border: none;
+	color: white;
+	padding: 5px 15px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 10px;
+	margin: 10px;
+	float: left;	
+}
