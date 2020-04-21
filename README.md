@@ -73,7 +73,7 @@ $ dotnet restore
 $ dotnet run
 ```
 
-Navigate to http://localhost:5000 to view the page
+Navigate to http://localhost:5001 to view the page
 
 Happy Coding
 
