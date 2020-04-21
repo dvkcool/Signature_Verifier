@@ -46,8 +46,8 @@ as follows :-
 + 2nd layer = 500 nodes
 + 3rd layer = 500 nodes
 + 4th layer = 2 nodes
-
 <h4> Neural Network running for 50 epoch </h4>
+
 ![Backpropagation](https://github.com/dvkcool/Signature_Verifier/blob/master/screenshots/ModelRunningFor50Epochs.png)
 
 ## Requirements
