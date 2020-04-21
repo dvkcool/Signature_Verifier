@@ -47,10 +47,13 @@ as follows :-
 + 3rd layer = 500 nodes
 + 4th layer = 2 nodes
 
-# Requirements
+## Requirements
 + Python 3.6
 + Opencv 3.2
 + Numpy
++ .Net Core 3.1
++ Visual Studio / VSCode
++ .Net Cli (dotnet)
 
 ## Usage
 
