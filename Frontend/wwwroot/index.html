@@ -123,23 +123,20 @@
   <body>
     <!-- Header Banner for title and menu options -->
     <marquee id="headerBanner" style =" background-color: #42adf4">
-      <p style="color: white; font-size:20; font-weight:bold"> GST Guide </p>
+      <p style="color: white; font-size:20; font-weight:bold"> Signature Verifier </p>
     </marquee>
 
     <!-- Left Section for image and text about project -->
     <div id ="leftSection" style="float: left; width:69.5%; border:1px solid #bec1bb">
-      <img src="res/banner.jpg" style="width:100%"/>
-      <p> About us: </p>
+      <img src="res/banner.png" style="width:100%"/>
       <p>
-        GST guide is a user friendly project, which can help generate GST reports,
-        e-verifiable bills and use a mobile app for product scan instead of requiring a bar
-        code reader.
+        Signature Verifier is a user friendly project, which is based on machine learning and can be used to test and train 
+        given the sample tests.
         <br><br>
         This project can be divided into following cateogories: <br>
         <ol>
-          <li> Addition of product including its gst details.</li>
-          <li> Generation of e-verifiable bills </li>
-          <li> Generation of on-demand GST Reports</li>
+          <li> Training of model </li>
+          <li> Testing of images</li>
         </ol>
         <br>
         <br>
@@ -151,31 +148,12 @@
 
     <!-- Right Section to display functional buttons -->
     <div id ="rightSection" style=" float: left; width:30%; border:1px solid #bec1bb; text-align: center;">
-      <button  onclick="openForm()" style="background-color: #4CAF50;border: none;color: white; width: 50%;
-      padding: 10px; text-align: center; text-decoration: none; display: inline-block;
-      font-size: 16px; margin: 4px 2px; border-radius: 10%">
-       <div id="Btext">Register</div></button>
-
-      <br>
-      <form style="display: none;" id="RegForm">
-        <label> Name: </label><br>
-        <input type="text" id="Name" required/><br>
-        <label> GSTIN number: </label><br>
-        <input type="text" id="GSTIN" required/><br>
-        <input type = "submit" onclick="closeForm()" value="Submit"/>
-      </form>
-      <div style="background-color: #42adf4; float: left; margin: 20px; text-align: center;  border-radius: 20%; width: 38%; height: 135">
-      	<a href="/addProduct.html"><i class="fas fa-cart-plus fa-5x"></i><p>Add new product</p></a>
-      </div>
 
       <div onclick="GoBill()" style="background-color: #42adf4; float: left; margin: 20px; text-align: center;  border-radius: 20%; width: 38%; height: 135 ">
-      	<i class="fas fa-receipt fa-5x" style="color: #5b0baa;"></i><p  style="color: #5b0baa;">Go to billing page</p>
+      	<a href="/allProducts/allProduct.html"><i class="fas fa-cog fa-5x" style="color: #5b0baa;"></i><p  style="color: #5b0baa;">Train</p></a>
       </div>
       <div style="background-color: #42adf4; float: left; margin: 20px; text-align: center; border-radius: 20%; width: 38%; height: 135  ">
-      	<a href="/allProducts/allProduct.html"><i class="fas fa-cubes fa-5x" style="color: #5b0baa;"></i><p>View present items</p></a>
-      </div>
-      <div  onclick="ShowReport()" style="background-color: #42adf4; float: left; margin: 20px; text-align: center; border-radius: 20%; width: 38%; height: 135  ">
-      	<i class="fas fa-paste fa-5x" style="color: #5b0baa;"></i><p>Generate report</p>
+      	<a href="/allProducts/allProduct.html"><i class="fas fa-check fa-5x" style="color: #5b0baa;"></i><p>Test Result</p></a>
       </div>
       <div id="Report" style="display: none;  position: fixed;  bottom: 0; right: 15px; height:10%; padding-top: 40; padding-bottom: 50; width:29%;  border: 3px solid #f1f1f1; z-index: 9;">
         <form>
