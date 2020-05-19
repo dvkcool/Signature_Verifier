@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/divyanshukumar/Documents/Signature_Verifier/Frontend/Frontend.csproj",
+      "projectUniqueName": "/Users/divyanshukumar/Documents/Signature_Verifier/Frontend-DotNet/Frontend.csproj",
       "projectName": "Frontend",
-      "projectPath": "/Users/divyanshukumar/Documents/Signature_Verifier/Frontend/Frontend.csproj",
+      "projectPath": "/Users/divyanshukumar/Documents/Signature_Verifier/Frontend-DotNet/Frontend.csproj",
       "packagesPath": "/Users/divyanshukumar/.nuget/packages/",
-      "outputPath": "/Users/divyanshukumar/Documents/Signature_Verifier/Frontend/obj/",
+      "outputPath": "/Users/divyanshukumar/Documents/Signature_Verifier/Frontend-DotNet/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/divyanshukumar/.nuget/NuGet/NuGet.Config"
