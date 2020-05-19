@@ -27,7 +27,7 @@
 	display: inline-block;
 	font-size: 10px;
 	margin: 10px;
-	float: left;	
+	float: left;
 }
 
 .btn2{
@@ -41,5 +41,9 @@
 	display: inline-block;
 	font-size: 10px;
 	margin: 10px;
-	float: left;	
+	float: left;
 }
+
+input[type=file]{
+padding:10px;
+background:#2d2d2d;}

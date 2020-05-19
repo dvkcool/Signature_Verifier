@@ -1,5 +1,112 @@
 <html>
   <head>
+    <script>
+    var et = 0;
+    // Function to check if user is registered
+    function isRegistered(){
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', "http://localhost:8083/isRegistered", true);
+      xhr.send();
+
+      xhr.onreadystatechange = processRequest;
+
+      function processRequest(e) {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+         var response = JSON.parse(xhr.responseText);
+         console.log(response);
+          et = response.isRegistered;
+          console.log(et);
+          console.log("E: "+et);
+          var bt = document.getElementById("Btext");
+          if(e===0){
+            bt.innerHTML = "Register";
+          }
+          else{
+            bt.innerHTML = "Edit Details";
+          }
+        }
+      }
+    }
+    function genReport(){
+      var a= document.getElementById("startDate").value;
+      var b = document.getElementById("endDate").value;
+      const url = "http://localhost:8083/GenerateReport";
+      fetch(url, {
+          method : "POST",
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            startDate: a,
+            endDate: b
+          }),
+      })
+      .then(val => {
+        console.log(val);
+        document.getElementById("Report").style.display = "none";
+        window.open("http://localhost:8083/destination.csv", "ReportWindow", "width=200,height=100");
+      })
+      .catch(err => {console.log(err)})
+    }
+    function ShowReport(){
+      if(document.getElementById("Report").style.display === "block"){
+        document.getElementById("Report").style.display = "none";
+      }
+      else{
+        document.getElementById("Report").style.display = "block";
+        // Max date setting
+        document.getElementById("startDate").max = new Date().toISOString().split("T")[0];
+        document.getElementById("endDate").max = new Date().toISOString().split("T")[0];
+      }
+    }
+    function openForm() {
+      if(document.getElementById("RegForm").style.display === "block"){
+        document.getElementById("RegForm").style.display = "none";
+      }
+      else{
+        document.getElementById("RegForm").style.display = "block";
+      }
+    }
+
+    function closeForm() {
+      var name = document.getElementById("Name").value;
+      var gst = document.getElementById("GSTIN").value;
+      if(name===""|| gst===""){
+        alert("Please enter the required values");
+      }
+      else{
+        var data = {
+             name: name,
+             gst: gst
+           };
+           console.log(data);
+           console.log("Hi");
+        const url = "http://localhost:8083/Register";
+        fetch(url, {
+            method : "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                 name: name,
+                 gst: gst
+               })
+        }).then(val =>{return val.json})
+        .then(val => {
+          console.log(val);
+          document.getElementById("RegForm").style.display = "none";
+        })
+        .catch(err => {console.log(err)})
+
+      }
+    }
+    function changeText(){
+      isRegistered();
+    }
+    changeText();
+
+    </script>
+
     <title> GST Guide</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="train.css">
@@ -129,9 +236,9 @@
 
     <!-- Left Section for image and text about project -->
     <div id ="leftSection" style="float: left; width:69.5%; border:1px solid #bec1bb">
-      <img src="res/banner.png" style="width:100%"/>
+        <a href="/index.html"><img src="res/banner.png" style="width:100%"/></a>
       <p>
-        Signature Verifier is a user friendly project, which is based on machine learning and can be used to test and train 
+        Signature Verifier is a user friendly project, which is based on machine learning and can be used to test and train
         given the sample tests.
         <br><br>
         This project can be divided into following cateogories: <br>
@@ -150,8 +257,8 @@
     <!-- Right Section to display functional buttons -->
     <div id ="rightSection" style=" float: left; width:30%; border:1px solid #bec1bb; text-align: center;">
 
-      <div onclick="GoBill()" style="background-color: #42adf4; float: left; margin: 20px; text-align: center;  border-radius: 20%; width: 38%; height: 135 ">
-      	<a href="/allProducts/allProduct.html"><i class="fas fa-cog fa-5x" style="color: #5b0baa;"></i><p  style="color: #5b0baa;">Train</p></a>
+      <div style="background-color: #42adf4; float: left; margin: 20px; text-align: center; border-radius: 20%; width: 38%; height: 135  ">
+      	<a href="/test.html"><i class="fas fa-check fa-5x" style="color: #5b0baa;"></i><p>Test Result</p></a>
       </div>
       <div>
       <img src = "s1.png" width="150px" height="150px" class="imag"></img>

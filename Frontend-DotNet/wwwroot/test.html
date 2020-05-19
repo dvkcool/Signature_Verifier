@@ -4,6 +4,18 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="test.css">
     <script>
+    var noFile = 0;
+    function readURL(input) {
+           if (input.files && input.files[0]) {
+               var reader = new FileReader();
+
+               reader.onload = function (e) {
+                  document.getElementById('blah').src = e.target.result;
+               };
+
+               reader.readAsDataURL(input.files[0]);
+           }
+       }
       var et = 0;
       //Function to naviagate to Billing page
       function GoBill(){
@@ -129,9 +141,9 @@
 
     <!-- Left Section for image and text about project -->
     <div id ="leftSection" style="float: left; width:69.5%; border:1px solid #bec1bb">
-      <img src="res/banner.png" style="width:100%"/>
+        <a href="/index.html"><img src="res/banner.png" style="width:100%"/></a>
       <p>
-        Signature Verifier is a user friendly project, which is based on machine learning and can be used to test and train 
+        Signature Verifier is a user friendly project, which is based on machine learning and can be used to test and train
         given the sample tests.
         <br><br>
         This project can be divided into following cateogories: <br>
@@ -149,9 +161,11 @@
 
     <!-- Right Section to display functional buttons -->
     <div id ="rightSection" style=" float: left; width:30%; border:1px solid #bec1bb; text-align: center;">
-      <div style="background-color: #42adf4; float: left; margin: 20px; text-align: center; border-radius: 20%; width: 38%; height: 135  ">
-        <a href="/allProducts/allProduct.html"><i class="fas fa-check fa-5x" style="color: #5b0baa;"></i><p>Test Result</p></a>
+      <div style="background-color: #42adf4; margin: 20px; text-align: center;  border-radius: 20%; width: 38%; height: 135 ">
+      	<a href="/train.html"><i class="fas fa-cog fa-5x" style="color: #5b0baa;"></i><p  style="color: #5b0baa;">Train</p></a>
       </div>
+      <!--
+      <br>
       <div>
       <img src = "s3.png" width="150px" height="150px" class="imag"></img>
       <button class="btn1">genuine</button>
@@ -171,6 +185,11 @@
         <input type="date" id="endDate" required/><br><br>
       </form>
       <button onclick="genReport()" type="submit"  style="background-color: #4CAF50;border: none;color: white; border-radius: 10%"> Generate report</button>
+    -->
+    <br><br>
+    <img id="blah" style="max-width:180px;" src="http://placehold.it/180" alt="your image" /><br><br>
+    <input type='file'  onchange="readURL(this);" /><br><br>
+    <button onclick="testImage()" style="background-color: #4CAF50;border: none;color: white; border-radius: 10%; height: 50;"> <h2>Test image</h2></button>
     </div>
 
 
