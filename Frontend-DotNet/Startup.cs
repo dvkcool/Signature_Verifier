@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Http;
 
 namespace Frontend
 {
@@ -49,7 +51,17 @@ namespace Frontend
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
+              endpoints.MapGet("/", async context =>
+              {
+                  await context.Response.WriteAsync("Hello World!");
+              });
+
+              endpoints.MapGet("/hello/{name:alpha}", async context =>
+              {
+                  var name = context.Request.RouteValues["name"];
+                  await context.Response.WriteAsync($"Hello {name}!");
+              });
+                //endpoints.MapRazorPages();
             });
         }
     }

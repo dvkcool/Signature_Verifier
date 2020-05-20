@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v3.1": {
       "Frontend/1.0.0": {
         "dependencies": {
+          "MySqlConnector": "0.66.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -303,6 +304,17 @@
         },
         "compile": {
           "Frontend.dll": {}
+        }
+      },
+      "MySqlConnector/0.66.0": {
+        "runtime": {
+          "lib/netcoreapp3.0/MySqlConnector.dll": {
+            "assemblyVersion": "0.66.0.0",
+            "fileVersion": "0.66.0.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.0/MySqlConnector.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -1950,6 +1962,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "MySqlConnector/0.66.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-laGcF5yxoWsBaoYJVkJXxsxiyIpz2lQn8FobpZiSGTWHEJQfhIlKHxhmXyUwD9WOsINKYJ3kmGNqkFojZW3VSA==",
+      "path": "mysqlconnector/0.66.0",
+      "hashPath": "mysqlconnector.0.66.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
       "type": "referenceassembly",

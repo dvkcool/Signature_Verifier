@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "K3ScZ+Iy6mWq8sV3U+KdXhWt4gW8h3HHMrQW6yNDuGvydUVPAQ8xkqoLI6sEW4dapN7/qrl4SMAWWiWr4PfC5A==",
+  "dgSpecHash": "MUYSVBmoDPO69u6/0ixbMCuTtZBQNSxMzpJ22O0rYcr7dTmQ9osWOfw4d5rzCoN/VXg/rOo6D6QgzOubBzHoXw==",
   "success": true,
   "projectFilePath": "/Users/divyanshukumar/Documents/Signature_Verifier/Frontend-DotNet/Frontend.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/divyanshukumar/.nuget/packages/mysqlconnector/0.66.0/mysqlconnector.0.66.0.nupkg.sha512"
+  ],
   "logs": []
 }

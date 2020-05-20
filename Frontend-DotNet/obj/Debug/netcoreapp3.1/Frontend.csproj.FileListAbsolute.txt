@@ -70,3 +70,4 @@
 /Users/divyanshukumar/Documents/Signature_Verifier/Frontend-DotNet/obj/Debug/netcoreapp3.1/Frontend.pdb
 /Users/divyanshukumar/Documents/Signature_Verifier/Frontend-DotNet/obj/Debug/netcoreapp3.1/Frontend.genruntimeconfig.cache
 /Users/divyanshukumar/Documents/Signature_Verifier/Frontend-DotNet/obj/Debug/netcoreapp3.1/Frontend.csproj.CopyComplete
+/Users/divyanshukumar/Documents/Signature_Verifier/Frontend-DotNet/bin/Debug/netcoreapp3.1/MySqlConnector.dll
