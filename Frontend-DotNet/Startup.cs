@@ -15,6 +15,8 @@ namespace Frontend
 {
     public class Startup
     {
+        private string _dbUrl = null;
+        private string _dbPassword = null;
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -25,6 +27,8 @@ namespace Frontend
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            _dbUrl = Configuration["DbUrl"];
+            _dbPassword = Configuration["DbPassword"];
             services.AddRazorPages();
         }
 
@@ -53,7 +57,9 @@ namespace Frontend
             {
               endpoints.MapGet("/", async context =>
               {
-                  await context.Response.WriteAsync("Hello World!");
+                  var result = string.IsNullOrEmpty(_dbUrl) ? "Null" : "Not Null";
+                  await context.Response.WriteAsync($"Secret is {result}");
+                  //await context.Response.WriteAsync("Hello World!");
               });
 
               endpoints.MapGet("/hello/{name:alpha}", async context =>

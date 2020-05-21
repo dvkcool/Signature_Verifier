@@ -1,13 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>668fa722-b927-4acf-9245-9eaff7656dd9</UserSecretsId>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="MySQLConnector" Version="0.66.0" />
   </ItemGroup>
-
-
-
 </Project>
