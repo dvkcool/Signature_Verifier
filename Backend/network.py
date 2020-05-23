@@ -87,15 +87,22 @@ class NeuralNetwork():
         for epoch in range(epochs):
             batches = self.separate_batches(training_data, batch_size)
             self.update_batches(batches, alpha)
+            self.evaluate(test_data,epoch)
 
-            print("Epoch {0}: {1} / {2}".format(epoch, self.evaluate(test_data), n_test))
+            #print("Epoch {0}: {1} / {2}".format(epoch, self.evaluate(), n_test))
 
-    def evaluate(self, test_data):
+    def evaluate(self, test_data, epoch):
         #r = [self.feedforward(x) for (x, y) in test_data]
         #for a in r:
         #    print("{0}, {1}".format(format(a[0][0], 'f'), format(a[1][0], 'f')))
+        
         test_results = [(np.argmax(self.feedforward(x)), y)
                         for (x, y) in test_data]
+        
+    
+        if(epoch == 49):
+            print((test_results[0])[0])
+            
         return sum(int(x == y) for (x, y) in test_results)
 
     def cost_derivative(self, output_activations, y):

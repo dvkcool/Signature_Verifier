@@ -6,11 +6,12 @@ import preprocessor
 
 
 def main():
-    print('OpenCV version {} '.format(cv2.__version__))
+    #print('OpenCV version {} '.format(cv2.__version__))
 
     current_dir = os.path.dirname(__file__)
 
     author = '021'
+    # change name when running in kaggle
     training_folder = os.path.join(current_dir, 'data/training/', author)
     test_folder = os.path.join(current_dir, 'data/test/', author)
 
@@ -31,11 +32,12 @@ def main():
         if img is not None:
             data = np.array(preprocessor.prepare(img))
             data = np.reshape(data, (901, 1))
-            result = 1 if "genuine" in filename else 0
-            test_data.append((data, result))
+            # giving dummy 1 value as it is not important
+            result = 1 
+            test_data.append((data,result))
 
     net = network.NeuralNetwork([901, 500, 500, 2])
-    net.sgd(training_data, 10, 50, 0.01, test_data)
+    net.sgd(training_data, 50, 50, 0.01, test_data)
 
 
 if __name__ == '__main__':
