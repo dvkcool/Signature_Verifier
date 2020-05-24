@@ -4,6 +4,8 @@ var bodyParser = require('body-parser');
 var app = Express();
 const { exec } = require('child_process');
 var sleep = require('sleep');
+var fs = require('fs');
+
 app.use(bodyParser.json());
 
 var Storage = multer.diskStorage({
@@ -32,8 +34,25 @@ app.post("/api/Upload", function(req, res) {
                 console.log(`exec error: ${error}`);
             }
         });
-        sleep.sleep(10);
-        return res.end("File uploaded sucessfully!.");
+        sleep.sleep(17);
+        var e = 0;
+        fs.readFile('a.txt', 'utf8', function(err, data){
+          // Display the file content
+          console.log(data[31]);
+          e = data[31];
+          if(e == 1){
+            return res.end("Valid image!.");
+          }
+          else{
+            return res.end("InValid image!.");
+          }
+          //console.log(data);
+          if(err){
+            console.log(err);
+          }
+        });
+
+
     });
 });
 
