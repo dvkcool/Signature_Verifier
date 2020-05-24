@@ -5,20 +5,33 @@ var app = Express();
 const { exec } = require('child_process');
 var sleep = require('sleep');
 var fs = require('fs');
-
+var express = require('express');
 app.use(bodyParser.json());
+app.use('/res', express.static(__dirname + '/res'));
 
 var Storage = multer.diskStorage({
    destination: function(req, file, callback) {
        callback(null, "./Images");
    },
    filename: function(req, file, callback) {
-       callback(null, "genuine-test");
+       callback(null, "genuine-test.jpg");
+   }
+});
+var Storagetrain = multer.diskStorage({
+   destination: function(req, file, callback) {
+       callback(null, "./Images");
+   },
+   filename: function(req, file, callback) {
+       callback(null, file.originalname);
    }
 });
 var upload = multer({
      storage: Storage
  }).array("imgUploader", 3);
+
+var uploadtrain = multer({
+      storage: Storagetrain
+  }).array("imgUploader", 50);
 
 app.post("/api/Upload", function(req, res) {
     upload(req, res, function(err) {
@@ -56,11 +69,29 @@ app.post("/api/Upload", function(req, res) {
             console.log(err);
           }
         });
-
-
     });
 });
 
+app.post("/api/train", function(req, res) {
+    uploadtrain(req, res, function(err) {
+        if (err) {
+            console.log(err);
+            return res.end("Something went wrong!");
+        }
+        var yourscript = exec('bash train.sh',
+        (error, stdout, stderr) => {
+            console.log(stdout);
+            console.log(stderr);
+            if (error !== null) {
+                console.log(`exec error: ${error}`);
+            }
+        });
+        sleep.sleep(5);
+        fs.readFile('modeltrain.html', 'utf8', function(e, d){
+          return res.end(d);
+        });
+    });
+});
 app.listen(8080, function () {
   console.log('Example app listening on port 8080!');
 });
