@@ -41,10 +41,15 @@ app.post("/api/Upload", function(req, res) {
           console.log(data[31]);
           e = data[31];
           if(e == 1){
-            return res.end("Valid image!.");
+            fs.readFile('valid.html', 'utf8', function(e, d){
+              return res.end(d);
+            });
           }
           else{
-            return res.end("InValid image!.");
+            fs.readFile('invalid.html', 'utf8', function(e, d){
+              return res.end(d);
+            });
+            //return res.sendFile('invalid.html');
           }
           //console.log(data);
           if(err){
